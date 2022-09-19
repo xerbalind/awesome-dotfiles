@@ -674,7 +674,7 @@ math.randomseed(os.time())
 -- Get the list of files from a directory. Must be all images or folders and non-empty. 
 function scanDir(directory)
 	local fileList, popen =  {}, io.popen
-	for filename in popen([[find "]] ..directory.. [[" -type f]]):lines() do
+	for filename in popen([[find ]] ..directory.. [[/*]]):lines() do
      table.insert(fileList,filename)
 	end
 	return fileList
