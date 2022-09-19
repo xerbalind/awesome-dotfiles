@@ -1,0 +1,6 @@
+Power;;rofi -show power -modi power:rofi-power-menu
+Calculator;;rofi -show calc -modi calc -no-show-match -no-sort
+Run;;rofi -show drun
+Emoji;;rofi -modi emoji -show emoji
+Window;;rofi -show window
+Network;;SCRIPTS/rofi-network-manager/rofi-network-manager.sh

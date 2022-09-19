@@ -1,0 +1,15 @@
+configuration {
+    font: "NotoSans Nerd Font 11";
+    show-icons: false;
+    kb-row-up: "Up,Control+p,Control+k";
+    kb-row-down: "Down,Control+n,Control+j";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+@theme "themes/gruvbox-dark-hard.rasi"
