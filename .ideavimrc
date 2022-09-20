@@ -1,0 +1,77 @@
+let mapleader=" "
+
+#Toggles
+nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
+
+#Terminal
+nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
+
+#Window navigation
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+
+
+# Navigate buffers
+nnoremap <A-h> :action PreviousTab<CR>
+nnoremap <A-l> :action NextTab<CR>
+nnoremap <A-c> :action CloseActiveTab<CR>
+
+#Editing
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+
+
+nnoremap gcc :action CommentByLineComment<CR>
+vnoremap gc :action CommentByLineComment<CR>
+
+# Lsp
+
+nnoremap <Leader>lf  :action ReformatCode<CR>
+nnoremap <leader>lo :action OptimizeImports<CR>
+nnoremap <leader>la :action ShowIntentionActions<CR>
+nnoremap <leader>lr :action RenameElement<CR>
+nnoremap gl :action ShowErrorDescription<CR>
+
+# navigation
+set incsearch
+nnoremap <leader>sg :action FindInPath<CR>
+nnoremap <c-a> :action GotoAction<CR>
+nnoremap <leader>f :action GotoFile<CR>
+nnoremap <leader>r :action GotoRelated<CR>
+nnoremap <leader>h :action CallHierarchy<CR>
+nnoremap <leader>b :action ShowNavBar<CR>
+nnoremap <c-s> :action FileStructurePopup<CR>
+nnoremap <leader>ss :action GotoSymbol<CR>
+nnoremap gr :action FindUsages<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotToDeclaration<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+
+# Tool windows
+nnoremap <c-p> :action JumpToLastWindow<CR>
+nnoremap <leader>x :action HideAllWindows<CR>
+nnoremap <leader>c :action HideAllWindows<CR>
+nnoremap <leader>q :action Exit<CR>
+
+# Running
+nnoremap <leader>rr :action Run<CR>
+nnoremap <leader>rs :action Stop<CR>
+nnoremap <leader>rc :action RunClass<CR>
+nnoremap <leader>rf :action ChooseRunConfiguration<CR>
+nnoremap <leader>rt :action ActivateRunToolWindow<CR>
+
+# Debugging
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>
+nnoremap <leader>dd :action ContextDebug<CR>
+nnoremap <leader>du :action ActivateDebugToolWindow<CR>
+
+# Nerdtree
+set NERDTree
+nnoremap <leader>e :NERDTreeToggle<CR>
+
