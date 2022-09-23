@@ -312,11 +312,11 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey,           }, "d", function () awful.spawn("rofi -show drun") end,
+    awful.key({ modkey,           }, "d", function () awful.spawn("rofi -dpi 96 -show drun") end,
               {description = "launch rofi drun", group = "launcher"}),
-    awful.key({ modkey,           }, "space", function () awful.spawn("rofi -show chief") end,
+    awful.key({ modkey,           }, "space", function () awful.spawn("rofi -dpi 96 -show chief") end,
               {description = "launch rofi chief (all launcher)", group = "launcher"}),
-    awful.key({ "Mod1",           }, "space", function () awful.spawn("rofi -show window") end, -- Mod1 == Alt_L
+    awful.key({ "Mod1",           }, "space", function () awful.spawn("rofi -dpi 96 -show window") end, -- Mod1 == Alt_L
               {description = "run rofi window switcher", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
