@@ -21,7 +21,7 @@ function board.new(args)
 
   instance.bg = myargs.bg or beautiful.bg_normal
   instance.fg = myargs.fg or beautiful.fg_normal
-  instance.homogeneous = myargs.homogeneous or true
+  instance.homogeneous = myargs.homogeneous or false
   instance.visible = false -- This is mainly for the widget cards to know when board is visible.
 
   -- Create a popup widget with some helper functions.
@@ -51,6 +51,7 @@ function board.new(args)
 
     function mypopup.show()
       mypopup.visible = true
+      mypopup.screen = awful.screen.focused()
     end
 
     function mypopup.hide()

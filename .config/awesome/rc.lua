@@ -45,6 +45,10 @@ do
 end
 -- }}}
 
+-- Set init brighness/backlight to 30%
+awful.spawn.easy_async("brightnessctl set 30%") 
+
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/home/xander/.config/awesome/theme/theme.lua")
@@ -268,6 +272,44 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
+    -- Media keys
+    awful.key({ }, "XF86MonBrightnessUp", 
+      function ()
+        awful.util.spawn("brightnessctl set +10%") 
+      end,
+      {description = "Increase brightness by 10%",group="media keys"}
+    ),
+    awful.key({ }, "XF86MonBrightnessDown", 
+      function ()
+        awful.util.spawn("brightnessctl set 10%-") 
+      end,
+      {description = "Decrease brightness by 10%",group="media keys"}
+    ),
+    awful.key({ }, "XF86AudioRaiseVolume", 
+      function ()
+        awful.util.spawn("amixer -D default sset Master 5%+") 
+      end,
+      {description = "Raise volume by 5%",group="media keys"}
+    ),
+    awful.key({ }, "XF86AudioLowerVolume", 
+      function ()
+        awful.util.spawn("amixer -D default sset Master 5%-") 
+      end,
+      {description = "Lower volume by 5%",group="media keys"}
+    ),
+    awful.key({ }, "XF86AudioMute", 
+      function ()
+        awful.util.spawn("amixer -D default sset Master toggle") 
+     end,
+      {description = "Toggle volume mute.",group="media keys"}
+    ),
+    awful.key({ }, "XF86Calculator", 
+      function ()
+        awful.util.spawn("rofi -show calc") 
+     end,
+      {description = "Open calculator",group="media keys"}
+    ),
+
     --Client navigation
 
     awful.key({ modkey,           }, "h",
@@ -312,11 +354,11 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey,           }, "d", function () awful.spawn("rofi -dpi 96 -show drun") end,
+    awful.key({ modkey,           }, "d", function () awful.spawn("rofi -show drun") end,
               {description = "launch rofi drun", group = "launcher"}),
-    awful.key({ modkey,           }, "space", function () awful.spawn("rofi -dpi 96 -show chief") end,
+    awful.key({ modkey,           }, "space", function () awful.spawn("rofi -show chief") end,
               {description = "launch rofi chief (all launcher)", group = "launcher"}),
-    awful.key({ "Mod1",           }, "space", function () awful.spawn("rofi -dpi 96 -show window") end, -- Mod1 == Alt_L
+    awful.key({ "Mod1",           }, "space", function () awful.spawn("rofi -show window") end, -- Mod1 == Alt_L
               {description = "run rofi window switcher", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
@@ -615,6 +657,13 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Info board widgets/cards
+--
+info_board.add_widget({
+  widget = "battery",
+  row = 1,
+  col = 1,
+  opts = {font = "Unifont 15",margin_top = 45}
+})
 
 info_board.add_widget({
   widget = "ram",
@@ -644,7 +693,8 @@ info_board.add_widget({
   opts = {device='default'},
   row = 1,
   col = 2,
-  col_span = 2
+  col_span = 2,
+  row_span = 2,
 })
 
 info_board.add_widget({
@@ -654,16 +704,16 @@ info_board.add_widget({
     font = "Unifont 35",
     align = "center"
   },
-  row = 2,
+  row = 3,
   col = 2,
 })
 
 info_board.add_widget({
   widget = "cpu",
   opts = {enable_kill_button=true,width=10},
-  row = 2,
+  row = 3,
   col = 3,
-  row_span = 3,
+  row_span = 4,
 })
 
 -- }}}
@@ -683,10 +733,12 @@ end
 wallpaperList = scanDir(os.getenv("HOME") .. "/wallpapers")
 
 -- Apply a random wallpaper every changeTime seconds.
-changeTime = 240
+changeTime = 300
 wallpaperTimer = timer { timeout = changeTime }
 wallpaperTimer:connect_signal("timeout", function()
-	gears.wallpaper.maximized(wallpaperList[math.random(1, #wallpaperList)], s, true)
+  for s = 1,screen.count() do
+	  gears.wallpaper.maximized(wallpaperList[math.random(1, #wallpaperList)], s, true)
+  end
  end)
 
 wallpaperTimer:emit_signal("timeout")
