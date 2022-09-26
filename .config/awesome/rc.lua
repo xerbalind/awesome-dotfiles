@@ -583,7 +583,7 @@ awful.rules.rules = {
 
     -- Set Firefox to always map on the tag named "2" on focused screen.
    { rule = { class = "firefox" },
-     properties = { screen=awful.screen.focused().index ,tag = "2" } },
+     properties = { screen=awful.screen.focused().index ,tag = "2" , opacity = 1, maximized = false, floating = false} },
 
     -- Set Nautilus to always map on the tag named "3" on focused screen.
    { rule = { class = "Org.gnome.Nautilus" },
@@ -670,6 +670,7 @@ info_board.add_widget({
   opts = {color_free=beautiful.green,color_used=beautiful.red},
   row=4,
   col=1,
+  col_span = 1,
 })
 
 info_board.add_widget({
@@ -714,6 +715,7 @@ info_board.add_widget({
   row = 3,
   col = 3,
   row_span = 4,
+  col_span = 3,
 })
 
 -- }}}
