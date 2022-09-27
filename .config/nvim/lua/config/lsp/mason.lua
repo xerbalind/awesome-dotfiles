@@ -15,7 +15,10 @@ local servers = {
   "pyright",
   "tsserver",
   "rnix",
+  "hls",
 }
+
+
 
 local settings = {
   ui = {
@@ -33,7 +36,7 @@ local settings = {
 mason.setup(settings)
 mason_lspconfig.setup {
   ensure_installed = servers,
-  automatic_installation = true,
+  --[[ automatic_installation = true, ]]
 }
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
