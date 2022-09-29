@@ -13,7 +13,8 @@ runner.setup({
 		java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
 		python = "python",
 		javascript = "node",
-    sh = "./$fileName"
+    sh = "./$fileName",
+    c = "cd $dir && gcc $fileName && ./a.out && rm a.out",
 	},
 	project = {
 		["~/Desktop/Java-Project/02108398"] = {
