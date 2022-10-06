@@ -147,7 +147,7 @@ return packer.startup(function(use)
 
 	-- Dodona Plugin
 	use({
-		"xand203/dodona.nvim",
+		"xerbalind/dodona.nvim",
 		requires = {
 			"rcarriga/nvim-notify",
 			"nvim-telescope/telescope.nvim",
