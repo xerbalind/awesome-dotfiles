@@ -67,7 +67,11 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
   end
 
+  if server == "ccls" then
+    local ccsl = require "config.lsp.settings.ccls"
+    opts = vim.tbl_deep_extend("force", ccsl, opts)
+  end
+
   lspconfig[server].setup(opts)
-  ::continue::
 end
 

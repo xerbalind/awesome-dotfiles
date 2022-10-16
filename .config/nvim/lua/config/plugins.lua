@@ -162,6 +162,8 @@ return packer.startup(function(use)
     ft = "markdown",
   }
 
+  use {"andweeb/presence.nvim"}
+
 
 	--Github copilot
 	-- use({ "github/copilot.vim" })
