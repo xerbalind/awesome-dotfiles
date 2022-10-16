@@ -567,6 +567,7 @@ awful.rules.rules = {
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",  -- xev.
+          "Memory"
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
@@ -670,7 +671,6 @@ info_board.add_widget({
   opts = {color_free=beautiful.green,color_used=beautiful.red},
   row=4,
   col=1,
-  col_span = 1,
 })
 
 info_board.add_widget({
@@ -716,6 +716,12 @@ info_board.add_widget({
   col = 3,
   row_span = 4,
   col_span = 3,
+})
+
+info_board.add_widget({
+  widget = "fs",
+  row = 5,
+  col = 1,
 })
 
 -- }}}

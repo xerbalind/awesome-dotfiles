@@ -7,6 +7,7 @@ local weather_widget = require("awesome-wm-widgets/weather-widget.weather")
 local volume_widget = require("awesome-wm-widgets/volume-widget.volume")
 local cpu_widget = require("awesome-wm-widgets/cpu-widget.cpu-widget")
 local battery_widget = require("awesome-wm-widgets/battery-widget.battery")
+local fs_widget = require("awesome-wm-widgets/fs-widget.fs-widget")
 
 M = {}
 
@@ -16,6 +17,7 @@ M.widgets = {
   volume = volume_widget,
   cpu = cpu_widget,
   battery = battery_widget,
+  fs = fs_widget,
 }
 
 function M.get_widget(name,args)
