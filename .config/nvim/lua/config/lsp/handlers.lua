@@ -9,7 +9,7 @@ if not status_ok then
 end
 
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 -- TODO: backfill this to template
 M.setup = function()

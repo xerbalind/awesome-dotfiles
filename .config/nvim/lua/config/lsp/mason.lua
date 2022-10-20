@@ -16,7 +16,7 @@ local servers = {
   "tsserver",
   "rnix",
   "hls",
-  "ccls",
+  "clangd",
 }
 
 
