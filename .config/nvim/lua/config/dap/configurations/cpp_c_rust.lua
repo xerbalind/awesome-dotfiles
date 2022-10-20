@@ -24,6 +24,15 @@ dap.configurations.cpp = {
     -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
     -- runInTerminal = false,
   },
+  {
+    -- If you get an "Operation not permitted" error using this, try disabling YAMA:
+    --  echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+    name = "Attach to process",
+    type = 'lldb', -- Adjust this to match your adapter name (`dap.adapters.<name>`)
+    request = 'attach',
+    pid = require('dap.utils').pick_process,
+    args = {},
+  },
 }
 
 -- If you want to use this for Rust and C, add something like this:
