@@ -56,7 +56,7 @@ return packer.startup(function(use)
   use("saadparwaiz1/cmp_luasnip") -- snippet completions
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-nvim-lua")
-  use "hrsh7th/cmp-emoji"
+  use "hrsh7th/cmp-emoji" 
   use("f3fora/cmp-spell")
 
   -- snippet plugins
@@ -163,10 +163,6 @@ return packer.startup(function(use)
   }
 
   use { "andweeb/presence.nvim" }
-
-
-  --Github copilot
-  -- use({ "github/copilot.vim" })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
