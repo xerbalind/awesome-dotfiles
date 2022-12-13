@@ -46,7 +46,10 @@ end
 -- }}}
 
 -- Set init brighness/backlight to 30%
-awful.spawn.easy_async("brightnessctl set 30%") 
+awful.spawn.easy_async("brightnessctl set 30%")
+
+-- Set lock timeout to 10 min
+awful.spawn("xset s 600");
 
 
 -- {{{ Variable definitions
@@ -416,6 +419,8 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
+    awful.key({ modkey, },"e",function () awful.screen.focus_relative(1) end,
+              {description = "goto other screen", group = "client"}),
     awful.key({ modkey, "Shift"   }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Shift" }, "space",  awful.client.floating.toggle                     ,
@@ -567,7 +572,7 @@ awful.rules.rules = {
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",  -- xev.
-          "Memory"
+          "Patience"
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
