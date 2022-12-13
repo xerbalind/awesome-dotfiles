@@ -27,9 +27,9 @@ runner.setup({
 			description = "a rofi script",
 			command = "rofi -show chief -modi chief:./chief",
 		},
-		["~/Documents/Informatica/funcprog/werkcollege/memory"] = {
-			name = "Memory",
-			description = "A memory game written in haskell",
+		["~/Documents/Informatica/funcprog/werkcollege/rpg"] = {
+			name = "Rpg",
+			description = "A rpg game written in haskell",
 			command = "stack run",
 		},
 	},
