@@ -140,49 +140,38 @@ cmp.setup({
         end
         return true
       end,
-      group_index = 2,
     },
-	  { name = "nvim_lua", group_index = 2 },
-    { name = "luasnip", group_index = 2 },	
-		{ name = "calc" , group_index = 2},
+	  { name = "nvim_lua"},
+    { name = "luasnip"},	
+		{ name = "calc"},
 		{ name = "buffer",
-      group_index = 2,
       entry_filter = function(entry, ctx)
         if not contains(buffer_fts, ctx.prev_context.filetype) then
           return false
         end
         return true
       end,},
-    { name = "path", group_index = 2 },
-    { name = "emoji" , group_index = 2},
-    { name = "spell", group_index = 2},
+    { name = "path" },
+    { name = "emoji"},
+    { name = "spell"},
 	},
   sorting = {
     priority_weight = 2,
     comparators = {
-      -- require("copilot_cmp.comparators").prioritize,
-      -- require("copilot_cmp.comparators").score,
       compare.offset,
       compare.exact,
-      -- compare.scopes,
       compare.score,
       compare.recently_used,
       compare.locality,
-      -- compare.kind,
       compare.sort_text,
       compare.length,
       compare.order,
-      -- require("copilot_cmp.comparators").prioritize,
-      -- require("copilot_cmp.comparators").score,
     },
   },
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
-	-- documentation = {
-	--   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-	-- },
 	experimental = {
 		ghost_text = true,
 		native_menu = false,
