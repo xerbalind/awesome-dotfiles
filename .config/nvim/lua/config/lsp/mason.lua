@@ -1,6 +1,6 @@
 local status_ok, mason = pcall(require, "mason")
 if not status_ok then
-	vim.notify("mason not found!!")
+  vim.notify("mason not found!!")
   return
 end
 
@@ -36,8 +36,8 @@ local settings = {
 
 mason.setup(settings)
 --[[ mason_lspconfig.setup { ]]
-  --[[ ensure_installed = servers, ]]
-  --[[ automatic_installation = true, ]]
+--[[ ensure_installed = servers, ]]
+--[[ automatic_installation = true, ]]
 --[[ } ]]
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
@@ -57,8 +57,8 @@ for _, server in pairs(servers) do
   server = vim.split(server, "@")[1]
 
   if server == "sumneko_lua" then
-		local sumneko_opts = require("config.lsp.settings.sumneko_lua")
-		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+    local sumneko_opts = require("config.lsp.settings.sumneko_lua")
+    opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
 
 
@@ -79,4 +79,3 @@ for _, server in pairs(servers) do
 
   lspconfig[server].setup(opts)
 end
-

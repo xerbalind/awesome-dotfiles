@@ -2,8 +2,8 @@ M = {}
 
 local status_ok, _ = pcall(require, "lspconfig")
 if not status_ok then
-	vim.notify("lspconfig not found!!")
-	return
+  vim.notify("lspconfig not found!!")
+  return
 end
 
 
@@ -28,7 +28,6 @@ M.server_capabilities = function()
 end
 
 require "config.lsp.lsp-signature"
---[[ require("config.lsp.lsp-installer") ]]
 require("config.lsp.mason")
 require("config.lsp.handlers").setup()
 require("config.lsp.null-ls")

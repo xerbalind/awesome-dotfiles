@@ -40,7 +40,7 @@ gitsigns.setup({
 	update_debounce = 100,
 	status_formatter = nil, -- Use default
 	max_file_length = 40000,
-	preview_config = {
+  preview_config = {
 		-- Options passed to nvim_open_win
 		border = "single",
 		style = "minimal",
