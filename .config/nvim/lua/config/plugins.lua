@@ -86,12 +86,15 @@ return packer.startup(function(use)
   use("mfussenegger/nvim-dap-python")
 
   -- Treesitter
-  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+  use({ "nvim-treesitter/nvim-treesitter"})
   use("p00f/nvim-ts-rainbow")
   use {
     "abecodes/tabout.nvim",
     wants = { "nvim-treesitter" }, -- or require if not used so far
   }
+
+  -- Syntax highlighting for purescript
+  use "purescript-contrib/purescript-vim"
 
   -- Syntax highlighting for kitty
   use "fladson/vim-kitty"
@@ -102,7 +105,6 @@ return packer.startup(function(use)
 
   -- Nice todo-comments
   use("folke/todo-comments.nvim")
-
 
   -- Autopairs
   use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
@@ -162,7 +164,7 @@ return packer.startup(function(use)
     ft = "markdown",
   }
 
-  use { "andweeb/presence.nvim" }
+  use("ggandor/leap.nvim")
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
