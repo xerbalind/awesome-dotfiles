@@ -94,7 +94,9 @@ done < "$CONFIG"
 
 if [ ! -z $ROFI_INFO ];then
     # Execute specified command
-    coproc ( ${actions[$ROFI_INFO]}  > /dev/null  2>&1 )
+    CALLER=$ROFI_INFO
+    unset ROFI_INFO
+    coproc ( ${actions[$CALLER]}  > /dev/null  2>&1 )
 else
     # Change prompt message
     echo -en "\0prompt\x1fChief\n"
