@@ -1,5 +1,6 @@
 Power;;rofi -show power -modi power:rofi-power-menu
 Calculator;;rofi -show calc -modi calc -no-show-match -no-sort
+Firefox;;rofi -show firefox -modi firefox:/home/xander/.config/rofi/scripts/firefox-profiles.sh
 Run;;rofi -show drun
 Emoji;;rofi -modi emoji -show emoji
 Window;;rofi -show window
