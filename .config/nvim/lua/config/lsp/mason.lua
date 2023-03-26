@@ -12,7 +12,7 @@ end
 
 local servers = {
   "lua_ls",
-  "pyright",
+  "jedi_language_server",
   "tsserver",
   "rnix",
   "hls",

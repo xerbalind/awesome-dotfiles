@@ -166,6 +166,15 @@ return packer.startup(function(use)
 
   use("ggandor/leap.nvim")
 
+  -- Chatgpt
+  use({
+    "dpayne/CodeGPT.nvim",
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim"
+    }
+  })
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
