@@ -24,9 +24,9 @@ null_ls.setup({
     diagnostics.tidy,
 
     -- javascript
-    -- formatting.eslint,
-    -- diagnostics.eslint,
-    -- code_actions.eslint,
+    formatting.eslint,
+    diagnostics.eslint,
+    code_actions.eslint,
 
   },
 })

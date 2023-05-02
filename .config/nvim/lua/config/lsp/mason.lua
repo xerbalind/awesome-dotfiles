@@ -18,7 +18,8 @@ local servers = {
   "hls",
   "clangd",
   "rust_analyzer",
-  "kotlin_language_server"
+  "kotlin_language_server",
+  "solargraph"
 }
 
 
