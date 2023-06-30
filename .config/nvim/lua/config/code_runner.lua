@@ -17,5 +17,9 @@ runner.setup({
     c = "cd $dir && gcc $fileName && ./a.out && rm a.out",
   },
   project = {
+    ["~/Documents/Informatica/multimedia/JPEG"] = {
+      name = "JPEG",
+      command = "cd JpegEncoder/build && make && cd ../.. && JpegEncoder/build/pract_jpeg"
+    },
   },
 })
