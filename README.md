@@ -6,6 +6,6 @@ My configuration for a kind of special awesome rice in gruvbox.
 
 <!-- TODO: Needs finishing -->
 
-....
+.....
 
 
