@@ -16,8 +16,8 @@ local servers = {
   "tsserver",
   "rnix",
   "hls",
-  --[[ "clangd", ]]
-  "ccls",
+  "pyright",
+  -- "ccls",
   "rust_analyzer",
   "kotlin_language_server",
   "solargraph"

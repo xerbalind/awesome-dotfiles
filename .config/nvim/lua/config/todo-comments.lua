@@ -17,7 +17,7 @@ todo_comments.setup{
     },
     TODO = { icon = " ", color = "info" },
     HACK = { icon = " ", color = "warning" },
-    WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+    WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" , "UNSAFE"} },
     PERF = { icon = " ", color = "purple", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
     NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
     TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },

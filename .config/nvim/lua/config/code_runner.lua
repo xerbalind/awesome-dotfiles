@@ -11,7 +11,6 @@ runner.setup({
   },
   filetype = {
     java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
-    python = "python",
     javascript = "node",
     sh = "./$fileName",
     c = "cd $dir && gcc $fileName && ./a.out && rm a.out",
@@ -21,5 +20,17 @@ runner.setup({
       name = "JPEG",
       command = "cd JpegEncoder/build && make && cd ../.. && JpegEncoder/build/pract_jpeg"
     },
+    ["~/Desktop/ats-os"] = {
+      name = "ATS-OS",
+      command = "make run"
+    },
+    ["~/Documents/HPC/vsc_user_docs"] = {
+      name = "HPC docs",
+      command = "python build.py"
+    },
+    ["~/Desktop/easystream/"] = {
+      name = "Easystream",
+      command = "ROCKET_CLI_COLORS=false cargo run"
+    }
   },
 })

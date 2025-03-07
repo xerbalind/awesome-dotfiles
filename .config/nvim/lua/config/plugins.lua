@@ -110,7 +110,7 @@ return packer.startup(function(use)
   use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 
   -- Commenting
-  use("JoosepAlviste/nvim-ts-context-commentstring") -- context commenting
+  -- use("JoosepAlviste/nvim-ts-context-commentstring") -- context commenting
   use("numToStr/Comment.nvim") -- easily comment stuff
 
   -- Git
@@ -176,6 +176,7 @@ return packer.startup(function(use)
   })
 
   use ("vmchale/ats-vim")
+  use 'eandrju/cellular-automaton.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

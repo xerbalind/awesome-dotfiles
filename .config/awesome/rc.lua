@@ -290,13 +290,13 @@ globalkeys = gears.table.join(
     ),
     awful.key({ }, "XF86AudioRaiseVolume", 
       function ()
-        awful.util.spawn("amixer -D default sset Master 5%+") 
+        awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%") 
       end,
       {description = "Raise volume by 5%",group="media keys"}
     ),
     awful.key({ }, "XF86AudioLowerVolume", 
       function ()
-        awful.util.spawn("amixer -D default sset Master 5%-") 
+        awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%") 
       end,
       {description = "Lower volume by 5%",group="media keys"}
     ),
@@ -355,9 +355,11 @@ globalkeys = gears.table.join(
               {description = "jump to urgent client", group = "client"}),
 
     -- Standard program
+    awful.key({ modkey,           }, "c", function() awful.spawn("chess-bot") end,
+              {description = "Start a chess bot that responds to key presses"}),
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey,           }, "d", function () awful.spawn("rofi -show drun") end,
+    awful.key({ modkey,           }, "d", function () awful.spawn("rofi -show drun -drun-match-fields name -drun-display-format '{name}' ") end,
               {description = "launch rofi drun", group = "launcher"}),
     awful.key({ modkey,           }, "space", function () awful.spawn("rofi -show chief") end,
               {description = "launch rofi chief (all launcher)", group = "launcher"}),
@@ -420,7 +422,9 @@ clientkeys = gears.table.join(
         end,
         {description = "toggle fullscreen", group = "client"}),
     awful.key({ modkey, },"e",function () awful.screen.focus_relative(1) end,
-              {description = "goto other screen", group = "client"}),
+              {description = "goto right screen", group = "client"}),
+    awful.key({ modkey, },"q",function () awful.screen.focus_relative(-1) end,
+              {description = "goto left screen", group = "client"}),
     awful.key({ modkey, "Shift"   }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Shift" }, "space",  awful.client.floating.toggle                     ,
@@ -557,6 +561,9 @@ awful.rules.rules = {
           "pinentry",
         },
         class = {
+          "Google Chrome",
+          "Untitled - Google Chrome",
+          "feh",
           "Arandr",
           "Blueman-manager",
           "Gpick",
